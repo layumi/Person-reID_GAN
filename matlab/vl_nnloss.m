@@ -237,42 +237,18 @@ if nargin <= 2 || isempty(dzdy)
             ex = exp(bsxfun(@minus, x, Xmax)) ;
             t = Xmax + log(sum(ex,3)) - x(ci) ;
         case 'labelsmooth'
+            % calculate the softmax loss for all. We will remove it for gan images later.
             [Xmax,index] = max(x,[],3) ;
             ex = exp(bsxfun(@minus, x, Xmax)) ;
-            t1 = Xmax + log(sum(ex,3)) - x(ci) ; % contain gan input, remove later
+            t1 = Xmax + log(sum(ex,3)) - x(ci) ; 
             K = size(x,3);
+            % label smooth for all
+            part1 = t1;  % softmax
+            part2 = log(sum(ex,3)) - sum(bsxfun(@minus,x,Xmax),3) * 1/K;  % label smooth
             % loss = (1-gama)* -log(p(x_gt)) + gama * sum{-log(p(x))}
-            part1 = t1;  %-log(p(x_gt))
-            part2 = log(sum(ex,3)) - sum(bsxfun(@minus,x,Xmax),3) * 1/K;
-            %---------return
             t = (1-opts.rate) * part1 + opts.rate *part2;
             gan = find(c==0);
-            t(gan) = part2(gan)*opts.gan;
-            %--------show---------
-            %{
-            figure(2);
-            real = find(c~=0);
-            global re;
-            global fa;
-            global re_num;
-            global gan_num;
-            global iter_re;
-            global ganPath;
-            re = re + sum(t(real));
-            fa = fa + sum(t(gan));
-            re_num = re_num + numel(real);
-            gan_num = gan_num + numel(gan);
-            fprintf('real_loss:%f,fake_loss:%f\t',re/re_num,fa/gan_num);
-            iter_re = iter_re + 1;
-            subplot(1,2,1);
-            hold on; plot(iter_re,re/re_num,'r*');
-            subplot(1,2,2);
-            hold on; plot(iter_re,fa/gan_num,'b*');
-            if(mod(iter_re,2000)==1)
-                drawnow;
-                print(2, ganPath, '-dpdf') ;
-            end
-            %}
+            t(gan) = part2(gan)*opts.gan;  % remove the softmax part for generated image.
         case 'mhinge'
             t = max(0, 1 - x(ci)) ;
         case 'mshinge'
@@ -320,9 +296,9 @@ else
             real = find(c~=0);
             part1(ci(real)) = part1(ci(real)) - 1 ;  % for evey gt, d(gt) = Y-1
             part2 = bsxfun(@minus,bsxfun(@rdivide, ex, sum(ex,3)),1/K);
-            y = (1-opts.rate) * part1 + opts.rate *part2;
-            gan = find(c==0);%========
-            y(:,:,:,gan) = part2(:,:,:,gan)*opts.gan;
+            y = (1-opts.rate) * part1 + opts.rate *part2;  % When we set opt.rate=0, it equals to softmax loss
+            gan = find(c==0);
+            y(:,:,:,gan) = part2(:,:,:,gan)*opts.gan; % We set opts.gan=1
             y = bsxfun(@times, dzdy, y) ;
         case 'mhinge'
             y = zerosLike(x) ;
