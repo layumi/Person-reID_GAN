@@ -20,7 +20,12 @@ This repos includes the baseline code and the three different methods in the pap
 | resnet52_market.m        | ResNet50 baseline | 
 | resnet52_market_K_1.m    | One extra class for generated images|  
 | resnet52_market_gan.m    | The proposed method, uniform probability | 
-| resnet52_market_pesudo.m | Give the most likely label for generated images| 
+| resnet52_market_pseudo.m | Give the most likely label for generated images| 
+
+* You can find more detailed code for proposed loss in https://github.com/layumi/Person-reID_GAN/blob/master/matlab/vl_nnloss.m#L291.
+
+* Pseudo label is realized in https://github.com/layumi/Person-reID_GAN/blob/master/matlab/%2Bdagnn/Pesudo_Loss.m
+
 
 ### Compile Matconvnet
 **(Note that I have included my Matconvnet in this repo, so you do not need to download it again.)**
@@ -41,7 +46,11 @@ We take Market1501 as an example in this repos and you can easily extend it to o
 ### Train with generated data
 1. Add your generated data path into `prepare_data_gan.m` and run it. It will add generated image path into the original image database.
 
-2. Run `train_id_net_res_market_new.m` for xxxxxx.
+2. Run `train_id_net_res_market_K_1.m` for training extra-class method.
+
+Or run `train_id_net_res_market_gan.m` for training the proposed method.
+
+Or run `train_id_net_res_market_pseudo.m` for training the pseudo-label method.
 
 ### Citation
 Please cite this paper in your publications if it helps your research:
