@@ -38,7 +38,7 @@ cc = cc(2:end);
 list = find(imdb.images.set==2);
 for i=1:numel(list)
     if cc(imdb.images.label(list(i)))<10
-        imdb.images.set(list(i))=1;
+        imdb.images.set(i)=1;
     end
 end
 
