@@ -1,9 +1,9 @@
-classdef Pesudo_Loss < dagnn.Loss
+classdef Pseudo_Loss < dagnn.Loss
 
   methods
     function outputs = forward(obj, inputs, params)
       labels = inputs{2};
-      labels_new = update_pesudo(inputs{1},labels);
+      labels_new = update_pseudo(inputs{1},labels);
       instanceWeights = ones(size(labels));
       gan = (labels==0);
       instanceWeights(gan) = 0.1;

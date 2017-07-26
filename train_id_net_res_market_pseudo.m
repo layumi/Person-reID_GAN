@@ -9,7 +9,7 @@ imdb = imdb.imdb;
 % -------------------------------------------------------------------------
 % Part 4.2: initialize a CNN architecture
 % -------------------------------------------------------------------------
-net = resnet52_market_pesudo();
+net = resnet52_market_pseudo();
 net.conserveMemory = true;
 net.meta.normalization.averageImage = reshape([105.6920,99.1345,97.9152],1,1,3);
 % -------------------------------------------------------------------------
@@ -22,7 +22,7 @@ opts.train.gpus = 2; %gpu id
 opts.train.prefetch = false ;
 opts.train.nesterovUpdate = true ;
 opts.train.expDir = './data/res52_drop0.75_pesudo1_gan6000' ;
-opts.train.derOutputs = {'objective', 1,'objective_pesudo',0} ;
+opts.train.derOutputs = {'objective', 1,'objective_pseudo',0} ;
 %opts.train.gamma = 0.9;
 opts.train.momentum = 0.9;
 %opts.train.constraint = 5;
@@ -38,7 +38,7 @@ opts.train.numEpochs = numel(opts.train.learningRate) ;
 function inputs = getBatch(imdb,net,batch,opts)
 % --------------------------------------------------------------------
 if(opts.epoch>20)  % after 20 epoch we start using pesudo label.
-    opts.derOutputs = {'objective', 0,'objective_pesudo',1} ;
+    opts.derOutputs = {'objective', 0,'objective_pseudo',1} ;
 end
 im_url = imdb.images.data(batch) ; 
 im = vl_imreadjpeg(im_url,'Pack','Resize',[224,224],'Flip',...

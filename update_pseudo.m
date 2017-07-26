@@ -1,4 +1,4 @@
-function labels = update_pesudo( x,labels)
+function labels = update_pseudo( x,labels)
 % quick estimate pesudo label
 f = vl_nnsoftmax(x);
 f = reshape(f,size(x,3),[]);
