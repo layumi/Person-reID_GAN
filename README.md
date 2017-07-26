@@ -9,7 +9,7 @@ We are reviewing the necessary codes and updating this repos. Now this repos is 
 The first stage is to generate fake images by DCGAN.
 We used the code provided in https://github.com/carpedm20/DCGAN-tensorflow and modify some hyper-parameters.
 
-For more reference, you can find our modified training code and generating code in './DCGAN'.
+For more reference, you can find our modified training code and generating code in `./DCGAN`.
 
 ### 2.Semi-supervised Learning 
 The second stage is to combine the original data and generated data to train the network.
@@ -17,10 +17,15 @@ This repos includes the baseline code and the three different methods in the pap
 
 | Methods               | Rank@1 | 
 | --------              | -----  | 
-| Ours* (SQ)            | 80.82% | 
-| Ours* (MQ-avg)        | 86.67% |  
-| Ours* (MQ-max)        | 86.76% | 
-| Ours* (MQ-max+rerank) | 86.67% | 
+| resnet52_market.m        | ResNet50 baseline | 
+| resnet52_market_K_1.m    | one extra class for generated images|  
+| resnet52_market_gan.m    | the proposed method, uniform probability | 
+| resnet52_market_pesudo.m | give the most likely label for generated images| 
+
+### Train
+1. Add your dataset path into `prepare_data.m` and run it. Make sure the code outputs the right image path.
+
+2. Run `train_id_net_res.m` to have fun.
 
 ### Citation
 Please cite this paper in your publications if it helps your research:
