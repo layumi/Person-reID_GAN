@@ -22,10 +22,19 @@ This repos includes the baseline code and the three different methods in the pap
 | resnet52_market_gan.m    | the proposed method, uniform probability | 
 | resnet52_market_pesudo.m | give the most likely label for generated images| 
 
-### Train
+### Compile Matconvnet
+
+
+
+### Train Baseline
 1. Add your dataset path into `prepare_data.m` and run it. Make sure the code outputs the right image path.
 
-2. Run `train_id_net_res.m` to have fun.
+2. Run `train_id_net_res_market_new.m`.
+
+### Train with generated data
+1. Add your generated data path into `prepare_data_gan.m` and run it. It will add generated image path into the original image database.
+
+2. Run `train_id_net_res_market_new.m`.
 
 ### Citation
 Please cite this paper in your publications if it helps your research:
