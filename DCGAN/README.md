@@ -2,7 +2,7 @@
 
 We did some slight changes compare to the original code. You can download the [original code](https://github.com/carpedm20/DCGAN-tensorflow) first and then modify the codes as we did.
 
-### Deepen the network.
+### 1.Deepen the network.
 
 The original network is trained on 64x64 input images. We slightly change the generator and discriminator network strucuture, which can recieve 128x128 input images. 
 
@@ -10,29 +10,36 @@ Generator(https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/model.py#L
 
 Discriminator(https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/model.py#L253)
 
-### Output Size
+### 2.Output Size
 
 We noticed that directly training on 256x256 input images will lead to random noisy images.
 
 So we use DCGAN to generate 128x128 output then resize it to 256x256 for further training.
 (https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/utils.py#L48)
 
-### Random vector
+### 3.Random vector
 We use `option=5` to generate images. You can change the range of input random vector.
 (https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/utils.py#L223)
 
-### Train & Test
+### 4.Train & Test
 
 Change the visualization setting from `OPTION = 5` to ` OPTION = 1` (https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/main.py#L71)
+
 Uncomment (https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/utils.py#L50)
+
 Comment (https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/utils.py#L48)
+
 Then Train: `python main.py --dataset duke_128 --train`
 
-duke_128 is a dir which contain images.
+duke_128 is the dir path which contains images.
 
 
 Change the visualization setting from `OPTION = 1` to ` OPTION = 5` (https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/main.py#L71)
+
 Uncomment (https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/utils.py#L48)
+
 Comment (https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/utils.py#L50)
+
 Test: `python main.py --dataset duke_128`
-It will generate 48,000 images.
+
+It will generate 48,000 images for the following training.
