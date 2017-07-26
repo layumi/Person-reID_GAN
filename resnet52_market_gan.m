@@ -20,8 +20,7 @@ dropoutBlock = dagnn.DropOut('rate',0.75);
 net.addLayer('dropout',dropoutBlock,{'pool5'},{'pool5d'},{});
 fc751Block = dagnn.Conv('size',[1 1 2048 751],'hasBias',true,'stride',[1,1],'pad',[0,0,0,0]);
 net.addLayer('fc751',fc751Block,{'pool5d'},{'prediction'},{'fc751f','fc751b'});
-%net.addLayer('softmaxloss',dagnn.Loss('loss','softmaxlog'),{'prediction','label'},'objective');
-%for debug
+%The proposed LSRO
 net.addLayer('labelsmoothloss',dagnn.Loss('loss','labelsmooth'),{'prediction','label'},'objective');
 
 net.addLayer('top1err', dagnn.Loss('loss', 'classerror'), ...
