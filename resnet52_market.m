@@ -1,4 +1,5 @@
 function net = resnet52_market()
+%The baseline model
 netStruct = load('./data/imagenet-resnet-50-dag.mat') ;
 net = dagnn.DagNN.loadobj(netStruct) ;
 net.removeLayer('fc1000');
