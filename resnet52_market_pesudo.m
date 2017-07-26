@@ -15,6 +15,7 @@ net.addLayer('dropout',dropoutBlock,{'pool5'},{'pool5d'},{});
 fc751Block = dagnn.Conv('size',[1 1 2048 751],'hasBias',true,'stride',[1,1],'pad',[0,0,0,0]);
 net.addLayer('fc751',fc751Block,{'pool5d'},{'prediction'},{'fc751f','fc751b'});
 
+% Here we use pesudo loss. We will assign a dynamic label.
 net.addLayer('loss_pesudo',dagnn.Pesudo_Loss(),{'prediction','label'},'objective_pesudo');
 net.addLayer('loss',dagnn.Loss('loss','softmaxlog'),{'prediction','label'},'objective');
 
@@ -25,4 +26,3 @@ net.addLayer('top5err', dagnn.Loss('loss', 'topkerror', ...
     {'prediction','label'}, 'top5err') ;
 net.initParams();
 end
-
