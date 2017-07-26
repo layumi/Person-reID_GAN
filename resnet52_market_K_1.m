@@ -19,6 +19,8 @@ end
 net.params(1).learningRate = 0.0001;
 dropoutBlock = dagnn.DropOut('rate',0.75);
 net.addLayer('dropout',dropoutBlock,{'pool5'},{'pool5d'},{});
+
+%Here we add one extra class. 751+1 classes
 fc751Block = dagnn.Conv('size',[1 1 2048 752],'hasBias',true,'stride',[1,1],'pad',[0,0,0,0]);
 net.addLayer('fc751',fc751Block,{'pool5d'},{'prediction'},{'fc751f','fc751b'});
 net.addLayer('softmaxloss',dagnn.Loss('loss','softmaxlog'),{'prediction','label'},'objective');
