@@ -21,7 +21,7 @@ So we use DCGAN to generate 128x128 output then resize it to 256x256 for further
 We use `option=5` to generate images. You can change the range of input random vector.
 (https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/utils.py#L223)
 
-### 4.Train & Test
+### 4.Train
 
 Change the visualization setting from `OPTION = 5` to ` OPTION = 1` (https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/main.py#L71)
 
@@ -33,7 +33,7 @@ Then Train: `python main.py --dataset duke_128 --train`
 
 duke_128 is the dir path which contains images.
 
-
+### 5.Test
 Change the visualization setting from `OPTION = 1` to ` OPTION = 5` (https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/main.py#L71)
 
 Uncomment (https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/utils.py#L48)
