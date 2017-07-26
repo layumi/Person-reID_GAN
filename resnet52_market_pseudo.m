@@ -16,7 +16,7 @@ fc751Block = dagnn.Conv('size',[1 1 2048 751],'hasBias',true,'stride',[1,1],'pad
 net.addLayer('fc751',fc751Block,{'pool5d'},{'prediction'},{'fc751f','fc751b'});
 
 % Here we use pseudo loss. We will assign a dynamic label.
-net.addLayer('loss_pseudo',dagnn.Pseudo_Loss(),{'prediction','label'},'objective_pesudo');
+net.addLayer('loss_pseudo',dagnn.Pseudo_Loss(),{'prediction','label'},'objective_pseudo');
 
 % The original softmax loss is used to train the first 20 epoches for stability.
 net.addLayer('loss',dagnn.Loss('loss','softmaxlog'),{'prediction','label'},'objective');

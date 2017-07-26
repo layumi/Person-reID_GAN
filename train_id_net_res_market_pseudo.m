@@ -32,12 +32,12 @@ opts.train.numEpochs = numel(opts.train.learningRate) ;
 [opts, ~] = vl_argparse(opts.train, varargin) ;
 
 % Call training function in MatConvNet
-[net,info] = cnn_train_dag_pesudo(net, imdb, @getBatch,opts) ;
+[net,info] = cnn_train_dag_pseudo(net, imdb, @getBatch,opts) ;
 
 % --------------------------------------------------------------------
 function inputs = getBatch(imdb,net,batch,opts)
 % --------------------------------------------------------------------
-if(opts.epoch>20)  % after 20 epoch we start using pesudo label.
+if(opts.epoch>20)  % after 20 epoch we start using pseudo label.
     opts.derOutputs = {'objective', 0,'objective_pseudo',1} ;
 end
 im_url = imdb.images.data(batch) ; 

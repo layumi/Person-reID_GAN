@@ -1,5 +1,5 @@
 function labels = update_pseudo( x,labels)
-% quick estimate pesudo label
+% quick estimate pseudo label
 f = vl_nnsoftmax(x);
 f = reshape(f,size(x,3),[]);
 [f_max,index] = max(f);
