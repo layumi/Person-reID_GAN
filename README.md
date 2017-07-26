@@ -15,26 +15,33 @@ For more reference, you can find our modified training code and generating code 
 The second stage is to combine the original data and generated data to train the network.
 This repos includes the baseline code and the three different methods in the paper.
 
-| Methods               | Rank@1 | 
+| Models               | Reference | 
 | --------              | -----  | 
 | resnet52_market.m        | ResNet50 baseline | 
-| resnet52_market_K_1.m    | one extra class for generated images|  
-| resnet52_market_gan.m    | the proposed method, uniform probability | 
-| resnet52_market_pesudo.m | give the most likely label for generated images| 
+| resnet52_market_K_1.m    | One extra class for generated images|  
+| resnet52_market_gan.m    | The proposed method, uniform probability | 
+| resnet52_market_pesudo.m | Give the most likely label for generated images| 
 
 ### Compile Matconvnet
+**(Note that I have included my Matconvnet in this repo, so you do not need to download it again.)**
 
+You just need to uncomment and modify some lines in `gpu_compile.m` and run it in Matlab. Try it~
 
+If you fail in compilation, you may refer to http://www.vlfeat.org/matconvnet/install/
 
-### Train Baseline
+### Dataset
+Download [Market1501 Dataset] (http://www.liangzheng.org/Project/project_reid.html)
+We take Market1501 as an example in this repos and you can easily extend it to other datasets.
+
+### Train the Baseline code
 1. Add your dataset path into `prepare_data.m` and run it. Make sure the code outputs the right image path.
 
-2. Run `train_id_net_res_market_new.m`.
+2. Run `train_id_net_res_market_new.m`. 
 
 ### Train with generated data
 1. Add your generated data path into `prepare_data_gan.m` and run it. It will add generated image path into the original image database.
 
-2. Run `train_id_net_res_market_new.m`.
+2. Run `train_id_net_res_market_new.m` for xxxxxx.
 
 ### Citation
 Please cite this paper in your publications if it helps your research:
