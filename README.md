@@ -8,6 +8,7 @@ The first stage is to generate fake images by DCGAN.
 We used the code provided in https://github.com/carpedm20/DCGAN-tensorflow and modify some hyper-parameters.
 
 For more reference, you can find our modified training code and generating code in `./DCGAN`.
+We wrote a detailed [README](https://github.com/layumi/Person-reID_GAN/tree/master/DCGAN). If you still has some question, feel free to contact me (zdzheng12@gmail.com).
 
 ### 2.Semi-supervised Learning 
 The second stage is to combine the original data and generated data to train the network.
