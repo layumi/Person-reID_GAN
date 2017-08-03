@@ -26,7 +26,7 @@ This repos includes the baseline code and the three different methods in the pap
 
 
 ### Compile Matconvnet
-**(Note that I have included my Matconvnet in this repo, so you do not need to download it again.)**
+**(Note that I have included my Matconvnet in this repo, so you do not need to download it again. I has changed some codes comparing with the original version. For example, one of the difference is in `/matlab/+dagnn/@DagNN/initParams.m`. If one layer has params, I will not initialize it again, especially for pretrained model.)**
 
 You just need to uncomment and modify some lines in `gpu_compile.m` and run it in Matlab. Try it~
 
