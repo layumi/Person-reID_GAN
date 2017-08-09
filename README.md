@@ -24,7 +24,7 @@ This repos includes the baseline code and the three different methods in the pap
 * You can find more detailed code for proposed loss in 
 [[forward code]](https://github.com/layumi/Person-reID_GAN/blob/master/matlab/vl_nnloss.m#L239)
 [[backward code]](https://github.com/layumi/Person-reID_GAN/blob/master/matlab/vl_nnloss.m#L291).
-(We also provide a [brief illustration](https://github.com/layumi/Person-reID_GAN/blob/master/support.pdf) for the LSRO loss implement.)
+(We write the label smooth loss first and then extend it to LSRO. Here we also provide a [brief illustration](https://github.com/layumi/Person-reID_GAN/blob/master/support.pdf) for the implement.)
 
 * Pseudo label is realized in https://github.com/layumi/Person-reID_GAN/blob/master/matlab/%2Bdagnn/Pseudo_Loss.m
 
