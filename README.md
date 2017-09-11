@@ -43,7 +43,7 @@ We take Market1501 as an example in this repos and you can easily extend it to o
 ### ImageNet Pretrained model
 1. Make a dir called `data` by typing `mkdir ./data`.
 
-2. Download [ResNet-50 model](http://www.vlfeat.org/matconvnet/models/imagenet-resnet-50-dag.mat) pretrained on Imagenet.
+2. Download [ResNet-50 model](http://www.vlfeat.org/matconvnet/models/imagenet-resnet-50-dag.mat) pretrained on Imagenet. Put it in the `data` dir. 
 
 ### Train the Baseline code
 1. Add your dataset path into `prepare_data.m` and run it. Make sure the code outputs the right image path.
