@@ -1,13 +1,28 @@
 ## DCGAN
 
-We did some slight changes compare to the original code. You can download the [original code](https://github.com/carpedm20/DCGAN-tensorflow) first and then modify the codes as we did.
-
 ## Prerequisites
 
 - Python 2.7 or Python 3.3+
 - [Tensorflow 0.12.1](https://github.com/tensorflow/tensorflow/tree/r0.12)
 - [SciPy](http://www.scipy.org/install.html)
 - [pillow](https://github.com/python-pillow/Pillow)
+
+Add Cuda Path to bashrc first
+```bash
+export LD_LIBRARY_PATH="/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH"
+```
+
+We write a simple script for you to install the dependence.
+```python
+# install env
+conda install -f dcgan.yml
+# activate env, then you can run code in this env.
+source activate dcgan
+```
+
+### Let's start
+We did some slight changes compare to the original code. You can download the [original code](https://github.com/carpedm20/DCGAN-tensorflow) first and then modify the codes as we did.
+
 
 ![](https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/test_2017-01-11%2009:40:47.png)
 Fig. Some generated samples trained on CUB-200-2011.
