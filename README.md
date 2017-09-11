@@ -18,7 +18,7 @@ This repos includes the baseline code and the three different methods in the pap
 | --------              | -----  | 
 | resnet52_market.m        | ResNet50 baseline | 
 | resnet52_market_K_1.m    | One extra class for generated images|  
-| resnet52_market_gan.m    | The proposed method, uniform probability | 
+| resnet52_market_lsro.m    | The proposed method, uniform probability | 
 | resnet52_market_pseudo.m | Give the most likely label for generated images| 
 
 * You can find more detailed code for proposed loss in 
@@ -50,7 +50,7 @@ We take Market1501 as an example in this repos and you can easily extend it to o
 
 2. Run `train_id_net_res_market_K_1.m` for training extra-class method.
 
-Or run `train_id_net_res_market_gan.m` for training the proposed method.
+Or run `train_id_net_res_market_lsro.m` for training the proposed method.
 
 Or run `train_id_net_res_market_pseudo.m` for training the pseudo-label method.
 
