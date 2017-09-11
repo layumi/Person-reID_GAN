@@ -1,0 +1,17 @@
+name: dcgan
+channels:
+    - https://conda.anaconda.org/menpo
+    - conda-forge
+dependencies:
+    - python==3.6.1
+    - numpy
+    - matplotlib
+    - pillow
+    - h5py
+    - tqdm
+    - imageio
+    - scipy
+    - protobuf
+    - pip:
+        - moviepy
+        - tensorflow-gpu==0.12.1
