@@ -16,7 +16,7 @@ We write a simple script for you to install the dependence.
 ```python
 # install env (especially for old version Tensorflow)
 conda install -f dcgan.yml
-# activate env, then you can run code in this env without downgrade the Tensorflow outside.
+# activate env, then you can run code in this env without downgrading the outside Tensorflow.
 source activate dcgan
 ```
 
