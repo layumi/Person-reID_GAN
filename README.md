@@ -37,8 +37,13 @@ You just need to uncomment and modify some lines in `gpu_compile.m` and run it i
 If you fail in compilation, you may refer to http://www.vlfeat.org/matconvnet/install/
 
 ### Dataset
-Download [Market1501 Dataset] (http://www.liangzheng.org/Project/project_reid.html)
+Download [Market1501 Dataset](http://www.liangzheng.org/Project/project_reid.html)
 We take Market1501 as an example in this repos and you can easily extend it to other datasets.
+
+### ImageNet Pretrained model
+1. Make a dir called `data` by typing `mkdir ./data`.
+
+2. Download [ResNet-50 model](http://www.vlfeat.org/matconvnet/models/imagenet-resnet-50-dag.mat) pretrained on Imagenet.
 
 ### Train the Baseline code
 1. Add your dataset path into `prepare_data.m` and run it. Make sure the code outputs the right image path.
