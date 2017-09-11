@@ -14,9 +14,9 @@ export LD_LIBRARY_PATH="/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH"
 
 We write a simple script for you to install the dependence.
 ```python
-# install env
+# install env (especially for old version Tensorflow)
 conda install -f dcgan.yml
-# activate env, then you can run code in this env.
+# activate env, then you can run code in this env without downgrade the Tensorflow outside.
 source activate dcgan
 ```
 
