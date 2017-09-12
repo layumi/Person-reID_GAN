@@ -14,7 +14,7 @@ Add Cuda Path to bashrc first
 export LD_LIBRARY_PATH="/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH"
 ```
 
-We write a simple script for you to install the dependence.
+We recommend you to install anaconda. Here we write a simple script for you to install the dependence by anaconda.
 ```python
 # install env (especially for old version Tensorflow)
 conda env create -f dcgan.yml
