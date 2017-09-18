@@ -8,6 +8,7 @@ Fig. Some generated samples trained on CUB-200-2011.
 - [Tensorflow 0.12.1](https://github.com/tensorflow/tensorflow/tree/r0.12)
 - [SciPy](http://www.scipy.org/install.html)
 - [pillow](https://github.com/python-pillow/Pillow)
+- CUDA 8.0
 
 Add Cuda Path to bashrc first
 ```bash
