@@ -47,7 +47,7 @@ We use `option=5` to generate images. You can change the range of input random v
 
 ### 4.Train
 
-Change the visualization setting from `OPTION = 5` to ` OPTION = 1` (https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/main.py#L71)
+Change the visualization setting from `OPTION = 5` to ` OPTION = 1` (https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/main.py#L100)
 
 Uncomment (https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/utils.py#L50)
 
@@ -58,7 +58,7 @@ Then Train: `python main.py --dataset duke_128 --train`
 `duke_128` is the dir path which contains images. You can change it to your dataset path.
 
 ### 5.Test
-Change the visualization setting from `OPTION = 1` to ` OPTION = 5` (https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/main.py#L71)
+Change the visualization setting from `OPTION = 1` to ` OPTION = 5` (https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/main.py#L100)
 
 Uncomment (https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/utils.py#L48)
 
