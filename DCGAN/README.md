@@ -27,7 +27,7 @@ source activate dcgan
 We did some slight changes compare to the original code. You can download the [my forked code](https://github.com/layumi/DCGAN-tensorflow) first and then modify the codes as we did.
 
 ### 1.Train
-```python
+```bash
 python main.py --dataset duke_train --train --input_height 128 --output_height 128 --options 1
 ```
 `duke_train` is the dir path which contains images. Here I use the (DukeMTMC-reID)[https://github.com/layumi/DukeMTMC-reID_evaluation] training set. You can change it to your dataset path.
