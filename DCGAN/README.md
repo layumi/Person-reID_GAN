@@ -24,7 +24,7 @@ source activate dcgan
 ```
 
 ### Let's start
-We did some slight changes compare to the original code. You can download the [original code](https://github.com/carpedm20/DCGAN-tensorflow) first and then modify the codes as we did.
+We did some slight changes compare to the original code. You can download the [my forked code](https://github.com/layumi/DCGAN-tensorflow) first and then modify the codes as we did.
 
 ### 1.Output Size
 
@@ -45,18 +45,18 @@ Uncomment (https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/utils.py#
 
 Comment (https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/utils.py#L48)
 
-Then Train: `python main.py --dataset duke_training --train --input_height 128 --output_height 128`
+Then Train: `python main.py --dataset duke_train --train --input_height 128 --output_height 128`
 
-`duke_training` is the dir path which contains images. Here I use the (DukeMTMC-reID)[https://github.com/layumi/DukeMTMC-reID_evaluation] training set.
+`duke_train` is the dir path which contains images. Here I use the (DukeMTMC-reID)[https://github.com/layumi/DukeMTMC-reID_evaluation] training set.
 You can change it to your dataset path.
 
-### 5.Test
+### 4.Test
 Change the visualization setting from `OPTION = 1` to ` OPTION = 5` (https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/main.py#L100)
 
 Uncomment (https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/utils.py#L48)
 
 Comment (https://github.com/layumi/Person-reID_GAN/blob/master/DCGAN/utils.py#L50)
 
-Test: `python main.py --dataset duke_training`  
+Test: `python main.py --dataset duke_train`  
 
 It will use your trained model and generate 48,000 images for the following semi-supervised training.
