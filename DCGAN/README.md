@@ -27,12 +27,13 @@ source activate dcgan
 We did some slight changes compare to the original code. You can download the [my forked code](https://github.com/layumi/DCGAN-tensorflow) first and then modify the codes as we did.
 
 ### 1.Train
-
-`python main.py --dataset duke_train --train --input_height 128 --output_height 128 --options 1`
-
+```python
+python main.py --dataset duke_train --train --input_height 128 --output_height 128 --options 1
+```
 `duke_train` is the dir path which contains images. Here I use the (DukeMTMC-reID)[https://github.com/layumi/DukeMTMC-reID_evaluation] training set. You can change it to your dataset path.
 
 ### 2.Test
-
-`python main.py --dataset duke_train --options 5`  
+```bash
+python main.py --dataset duke_train --options 5
+```
 It will use your trained model and generate 48,000 images for the following semi-supervised training.
