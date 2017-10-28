@@ -34,6 +34,8 @@ This repos includes the baseline code and the three different methods in the pap
 
 You just need to uncomment and modify some lines in `gpu_compile.m` and run it in Matlab. Try it~
 
+(The code does not support cudnn 6.0. You may just turn off the Enablecudnn or try cudnn5.1)
+
 If you fail in compilation, you may refer to http://www.vlfeat.org/matconvnet/install/
 
 ### Dataset
