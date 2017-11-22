@@ -1,16 +1,24 @@
 function nn = resnet52_2stream()
-%This code concat two resnet together
-net1 = resnet52_market();
-%net1.removeLayer('top1err');
-%net1.removeLayer('top5err');
-net1 = net1.saveobj() ;
-net2 = load('resnet52_market.mat') ;
-net1.vars = [net1.vars,net2.vars(2:end)];
-net1.layers = [net1.layers,net2.layers];
-%net1.meta = [net1.meta,net2.meta];
-nn = dagnn.DagNN.loadobj(net1) ;
-
-
+% Concat two model.
+if(~exist('net.mat'))
+    net1 = resnet52_market();
+    net1.removeLayer('top5err');
+    net2 = resnet52_market(); %imagenet
+    net2.removeLayer('top5err');
+    %change name
+    for i = 1:numel(net2.layers)
+        net2.renameLayer(net2.layers(i).name,sprintf('%s_2',net2.layers(i).name));
+    end
+    for i = 1:numel(net2.vars)
+        net2.renameVar(net2.vars(i).name,sprintf('%s_2',net2.vars(i).name));
+    end
+    nn = concat_2net(net1,net2);
+    net_struct = nn.saveobj();
+    save('net.mat','net_struct');
+else
+    load('net.mat');
+    nn = dagnn.DagNN.loadobj(net_struct);
+end
 % *****************************************************************************
 % 2 classify
 nn.addLayer('Square',dagnn.Square(),{'pool5','pool5_2'},{'ODist'},{});
