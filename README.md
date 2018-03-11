@@ -61,6 +61,8 @@ Or run `train_id_net_res_market_lsro.m` for training the proposed method.
 
 Or run `train_id_net_res_market_pseudo.m` for training the pseudo-label method.
 
+(What's new: I also include `train_id_net_res_2stream_gan.m` for training the code with the method proposed in my another paper. I do not import all files, and you may find the missing code in https://github.com/layumi/2016_person_re-ID. )
+
 ## Test 
 1. Run `test/test_gallery_query_crazy.m` to extract the features of images in the gallery and query set. They will store in a .mat file. Then you can use it to do evaluation.
 2. Evaluate feature on the Market-1501. Run `evaluation/zzd_evaluation_res_faster.m`.
