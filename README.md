@@ -81,3 +81,4 @@ Please cite this paper in your publications if it helps your research:
 ## Related Repos
 1. [2stream Person re-ID](https://github.com/layumi/2016_person_re-ID)
 2. [Pedestrian Alignment Network](https://github.com/layumi/Pedestrian_Alignment)
+3. [MpRL Person re-ID](https://github.com/Huang-3/MpRL-for-person-re-ID)
