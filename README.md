@@ -39,7 +39,7 @@ You just need to uncomment and modify some lines in `gpu_compile.m` and run it i
 If you fail in compilation, you may refer to http://www.vlfeat.org/matconvnet/install/
 
 ### Dataset
-Download [Market1501 Dataset](http://www.liangzheng.org/Project/project_reid.html)
+Download [Market1501 Dataset](http://www.liangzheng.org/Project/project_reid.html). [[Google]](https://drive.google.com/file/d/0B8-rUzbwVRk0c054eEozWG9COHM/view) [[Baidu]](https://pan.baidu.com/s/1ntIi2Op)
 We take Market1501 as an example in this repos and you can easily extend it to other datasets.
 
 ### ImageNet Pretrained model
